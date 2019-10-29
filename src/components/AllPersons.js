@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from 'prop-types';
 
 export default function AllPersons(props) {
-  const { persons} = props;
+  const { persons,editPerson,deletePerson} = props;
   
   return (
     <div>
