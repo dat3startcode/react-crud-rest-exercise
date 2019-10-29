@@ -20,7 +20,7 @@ function App({apiFacade}) {
     //Call this from the AllPerson control with the id for the person to delete
   }
 
-  const editPerson = (id) => {
+  const editPerson = (person) => {
     //Call thisfrom the AllPerson control with the  person to edit
     //Set the state variable personToAddEdit with this person (a clone) to make the new value flow down via props
   }
