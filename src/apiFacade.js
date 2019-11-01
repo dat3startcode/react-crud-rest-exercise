@@ -44,6 +44,6 @@ function apiFacade() {
     deletePerson
   };
 }
-
-export default apiFacade();
+const returnValue = apiFacade();
+export returnValue;
 
