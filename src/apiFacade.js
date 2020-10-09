@@ -1,4 +1,3 @@
-
 let URL = "http://localhost:3456/api";
 
 //The two methods below, are the utility-methods introduced here (use them if you like):
@@ -45,5 +44,5 @@ function apiFacade() {
   };
 }
 const returnValue = apiFacade();
-export returnValue;
+export default returnValue;
 
