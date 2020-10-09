@@ -9,8 +9,9 @@ function App({apiFacade}) {
   const [persons, setPersons] = useState([]);
 
   useEffect(() => {
-    //This would be a great place to fetch data (all persons) from the backend
-  });
+    //Change the callback to populate table (rather than just console logging)
+    apiFacade.getPersons((data)=>{console.log('DATA:',data);});
+  },[]);
 
   const storeAddEditPerson = (person) => {
     //Call this from the AddEditPerson control with the person to Add or Edit and Add/Edit via the apiFacade
