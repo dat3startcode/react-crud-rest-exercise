@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 export default function AddEditPerson(props) {
   const [person, setPerson] = useState({ ...props.newPerson });
+  const addEditPerson = props.addEditPerson;
 
   /* Add the required changes to use Reacts "Controlled Component Pattern" 
      to handle inputs related to a person */
@@ -10,15 +11,20 @@ export default function AddEditPerson(props) {
     const val = evt.target.value;
     setPerson({...person,[id]:val});
   }
-  const handleSubmit = (evt) => {}
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    console.log(person);
+    addEditPerson(person);
+  }
 
   return (
     <div>
-      <form className="form-horizontal" onSubmit={handleSubmit}>
+      {console.log('After render: ',person)}
+      <form className="form-horizontal" onSubmit={handleSubmit} onChange={handleChange}>
         <div className="form-group">
           <label className="control-label col-sm-3">Id:</label>
           <div className="col-sm-9">
-            <input className="form-control" readOnly id="id" />
+            <input className="form-control" readOnly id="id" defaultValue={person.id}/>
           </div>
         </div>
         <div className="form-group">
@@ -30,6 +36,7 @@ export default function AddEditPerson(props) {
               className="form-control"
               id="name"
               placeholder="Enter Name"
+              defaultValue={person.name}
             />
           </div>
         </div>
@@ -43,6 +50,7 @@ export default function AddEditPerson(props) {
               className="form-control"
               id="age"
               placeholder="Enter age"
+              defaultValue={person.age}
             />
           </div>
         </div>
@@ -56,6 +64,7 @@ export default function AddEditPerson(props) {
               className="form-control"
               id="email"
               placeholder="Enter email"
+              defaultValue={person.email}
             />
           </div>
         </div>
@@ -68,6 +77,7 @@ export default function AddEditPerson(props) {
               className="form-control"
               id="gender"
               placeholder="Enter Gender"
+              defaultValue={person.gender}
             />
           </div>
         </div>

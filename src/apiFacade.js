@@ -14,11 +14,15 @@ function apiFacade() {
   
   function addEditPerson(person, callback) {
     //Complete me. A smart version will handle both Add and Edit, but focus on Add (POST) only first
-    utils.fetchAny(URL, callback,'POST',person);
+    if(person.id){
+      utils.fetchAny(`${URL}/${person.id}`, callback,'PUT',person);
+    } else{
+      utils.fetchAny(URL, callback,'POST',person);
+    }
   }
 
   function deletePerson(id, callback) {
-    //Complete me
+    utils.fetchAny(URL+'/'+id, callback, 'DELETE');
   }
   
   return {
