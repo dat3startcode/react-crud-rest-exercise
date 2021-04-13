@@ -10,7 +10,10 @@ function App({apiFacade}) {
 
   useEffect(() => {
     //Change the callback to populate table (rather than just console logging)
-    apiFacade.getPersons((data)=>{console.log('DATA:',data);});
+    apiFacade.getPersons((data)=>{
+      console.log('DATA:',data);
+      setPersons(data);
+    });
   },[]);
 
   const storeAddEditPerson = (person) => {

@@ -5,7 +5,11 @@ export default function AddEditPerson(props) {
 
   /* Add the required changes to use Reacts "Controlled Component Pattern" 
      to handle inputs related to a person */
-  const handleChange = (evt) => {}
+  const handleChange = (evt) => {
+    const id = evt.target.id;
+    const val = evt.target.value;
+    setPerson({...person,[id]:val});
+  }
   const handleSubmit = (evt) => {}
 
   return (

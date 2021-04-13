@@ -12,6 +12,17 @@ export default function AllPersons(props) {
         </thead>
         <tbody>
           {/*Add the rows here */}
+          {persons.map(person=><tr key={person.id}><td>{person.age}</td><td>{person.name}</td><td>{person.gender}</td><td>{person.email}</td><td>
+<a href="xx" onClick={(e)=>{
+  e.preventDefault(); 
+  editPerson(person)
+  }}>edit</a> / 
+  <a href="xx" onClick={(e)=>{
+    e.preventDefault();
+    deletePerson(person.id)
+    }}>delete</a>
+</td>
+</tr>)}
         </tbody>
       </table>
       

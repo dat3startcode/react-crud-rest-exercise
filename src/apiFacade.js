@@ -11,9 +11,10 @@ function apiFacade() {
     // Change me to do something with data
     utils.fetchAny(URL,callback);
   }
-
+  
   function addEditPerson(person, callback) {
-   //Complete me. A smart version will handle both Add and Edit, but focus on Add (POST) only first
+    //Complete me. A smart version will handle both Add and Edit, but focus on Add (POST) only first
+    utils.fetchAny(URL, callback,'POST',person);
   }
 
   function deletePerson(id, callback) {
